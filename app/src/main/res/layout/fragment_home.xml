@@ -30,11 +30,14 @@
         app:layout_constraintTop_toTopOf="@id/logo"
         app:layout_constraintBottom_toBottomOf="@id/logo"
         android:layout_marginStart="4dp"/>
-    <androidx.viewpager2.widget.ViewPager2
+    <ImageView
         android:id="@+id/banner"
         android:layout_width="match_parent"
         android:layout_height="182dp"
         app:layout_constraintTop_toBottomOf="@id/logo"
+        android:src="@drawable/ph_banner"
+
+
         android:layout_marginTop="12dp"/>
 
     <TextView
@@ -57,6 +60,49 @@
         app:layout_constraintTop_toTopOf="@id/text_recaudio"
         app:layout_constraintBottom_toBottomOf="@id/text_recaudio"
         android:layout_marginStart="4dp"/>
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/text_recaudio"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:orientation="horizontal"
+        android:layout_gravity="center_vertical"
+        android:columnCount="3"
+        android:rowCount="2"
+        >
+        <ImageView
+            android:paddingHorizontal="12dp"
+            android:src="@drawable/ph_error"/>
+        <ImageView
+            android:paddingHorizontal="12dp"
+            android:src="@drawable/ph_error"
+            />
+        <ImageView
+            android:paddingHorizontal="12dp"
+            android:src="@drawable/ph_error"/>
+
+        <ImageView
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="12dp"
+            android:paddingTop="20dp"
+            android:src="@drawable/ph_error" />
+        <ImageView
+            android:paddingTop="20dp"
+            android:paddingHorizontal="12dp"
+            android:src="@drawable/ph_error"/>
+        <ImageView
+            android:paddingTop="20dp"
+            android:paddingHorizontal="12dp"
+            android:src="@drawable/ph_error"/>
+
+
+    </GridLayout>
+
 
 
 
