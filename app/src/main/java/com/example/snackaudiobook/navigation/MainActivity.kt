@@ -26,6 +26,7 @@ class MainActivity : AppCompatActivity() {
 
         var bnv_main = findViewById(R.id.bnv_main) as BottomNavigationView
 
+        viewPager2.isUserInputEnabled = false
         viewPager2.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
                 super.onPageSelected(position)

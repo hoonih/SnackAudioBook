@@ -1,10 +1,13 @@
 package com.example.snackaudiobook.navigation
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.example.snackaudiobook.R
@@ -39,18 +42,24 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-        /* val myView = inflater.inflate(R.layout.fragment_home, container, false)
         // Inflate the layout for this fragment
-        val binding = FragmentHomeBinding.inflate(inflater)
+        val binding = FragmentHomeBinding.inflate(inflater, container, false)
 
-        val bannerAdapter = RecommendViewpagerAdapter(this)
-        binding.banner.adapter = bannerAdapter
-        binding.banner.orientation = ViewPager2.ORIENTATION_HORIZONTAL
+        for (i in 0 until binding.grid1.childCount) {
+            val imageView = binding.grid1.getChildAt(i) as ImageView
+            imageView.setOnClickListener { view ->
+                val itemIndex = binding.grid1.indexOfChild(view)
+                val toastMessage = "아이템 순서 번호: $itemIndex"
+                Toast.makeText(getActivity(), toastMessage, Toast.LENGTH_SHORT).show()
 
-        return binding.root*/
+                val intent = Intent(activity, ViewpageActivity::class.java)
+                intent.putExtra("book", itemIndex)
+                startActivity(intent)
+            }
+        }
 
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        return binding.root
+
     }
 
 }

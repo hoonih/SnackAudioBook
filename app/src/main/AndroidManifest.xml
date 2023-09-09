@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Snackaudiobook"
         tools:targetApi="31">
         <activity
+            android:name=".navigation.ViewpageActivity"
+            android:exported="false" />
+        <activity
             android:name=".ux.LoginActivity"
             android:exported="false" />
         <activity

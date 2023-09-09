@@ -4,4 +4,8 @@
         android:font="@font/multicolore"/>
     <font
         android:font="@font/suitregular"/>
+    <font
+        android:font="@font/suitextrabold"/>
+    <font
+        android:font="@font/suitsemibold"/>
 </font-family>

@@ -1,8 +1,10 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.Snackaudiobook" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.Snackaudiobook" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="android:navigationBarColor">#121212</item>
+        <item name="android:colorPrimaryDark">#121212</item>
     </style>
 
     <style name="MyItemFont" parent="android:Widget.TextView">
@@ -14,6 +16,8 @@
         parent="Widget.Design.BottomNavigationView">
         <item name="fontFamily">@font/suitregular</item>
         <item name="android:textSize">10dp</item>
+        <item name="colorPrimary">#FFFFFFFF</item>
+        <item name="colorOnPrimary">#FFFFFFFF</item>
     </style>
 
     <style name="Theme.Snackaudiobook" parent="Base.Theme.Snackaudiobook" />
