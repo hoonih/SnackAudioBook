@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
         adapter = FragmentPageAdapter(supportFragmentManager, lifecycle)
         viewPager2 = findViewById(R.id.fl_con)
 
