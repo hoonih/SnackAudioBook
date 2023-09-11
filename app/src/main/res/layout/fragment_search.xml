@@ -45,6 +45,7 @@
         android:hint="검색어를 입력해주세요"
         android:fontFamily="@font/suitregular"
         android:textColorHint="@color/hintcolor"
+        android:textColor="@color/white"
         android:drawablePadding="5dp"
         android:paddingStart="10dp"
         />
