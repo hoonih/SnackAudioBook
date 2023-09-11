@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="152dp"
+    android:layout_height="276dp"
+    android:background="@drawable/bg_image0"
+    android:layout_gravity="center"
+    android:layout_margin="20dp"
+    android:id="@+id/layoutlistItem">
+
+            <ImageView
+                android:id="@+id/img"
+                android:layout_gravity="center"
+                android:layout_width="100dp"
+                android:layout_marginTop="23dp"
+                android:layout_height="150dp"
+                android:src="@drawable/book1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+    <TextView
+        android:id="@+id/bookname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="어린 왕자"
+        android:fontFamily="@font/suitsemibold"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="212dp"/>
+    <TextView
+        android:id="@+id/bookauthor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="생텍쥐페리"
+        android:fontFamily="@font/suitregular"
+        android:textColor="#868687"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bookname"/>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
