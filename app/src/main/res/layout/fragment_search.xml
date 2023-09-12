@@ -145,6 +145,7 @@
         android:layout_marginEnd="20dp"
         android:layout_marginTop="16dp">
         <androidx.cardview.widget.CardView
+            android:id="@+id/card1"
             android:layout_width="match_parent"
             android:layout_height="110dp"
             android:layout_gravity="center"
@@ -165,6 +166,7 @@
 
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
+            android:id="@+id/card2"
             android:layout_width="match_parent"
             android:layout_height="110dp"
             android:layout_marginTop="16dp"
@@ -186,6 +188,7 @@
 
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
+            android:id="@+id/card3"
             android:layout_width="match_parent"
             android:layout_height="110dp"
             android:layout_marginTop="16dp"
@@ -200,7 +203,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:text="페인트"
+                android:text="파친코"
                 android:textColor="@color/white"
                 android:fontFamily="@font/suitregular"
                 android:textSize="22dp"/>
