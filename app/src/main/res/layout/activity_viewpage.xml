@@ -71,11 +71,11 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
                 android:layout_marginTop="8dp"
-                android:text="저장"
+                android:text="보관"
                 android:textColor="@color/white"
                 android:fontFamily="@font/suitsemibold"
-                android:drawableStart="@drawable/ic_vertical_align_bottom"
-                android:drawablePadding="-160dp"
+                android:drawableStart="@drawable/ic_store_2"
+                android:drawablePadding="-150dp"
                 android:paddingStart="160dp"
                 />
             <TextView

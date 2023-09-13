@@ -12,6 +12,10 @@ import com.example.snackaudiobook.R
 
 class ListAdapterGrid(var context: Context, var list:ArrayList<Book>):
     RecyclerView.Adapter<ListAdapterGrid.ItemHolder>() {
+    fun updateData(newDataList: ArrayList<Book>) {
+        list = newDataList
+        notifyDataSetChanged()
+    }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemHolder {
 
         val itemHolder = LayoutInflater.from(parent.context).inflate(R.layout.list_grid_item, parent, false)

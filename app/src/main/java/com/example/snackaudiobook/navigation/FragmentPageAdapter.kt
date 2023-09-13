@@ -24,4 +24,8 @@ class FragmentPageAdapter (
         else
             InfoFragment()
     }
+
+    fun getFragment(i: Int): Any {
+        return createFragment(i)
+    }
 }

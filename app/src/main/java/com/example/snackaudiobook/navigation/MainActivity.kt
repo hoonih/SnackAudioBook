@@ -2,6 +2,7 @@ package com.example.snackaudiobook.navigation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.fragment.app.FragmentManager
 import androidx.viewpager2.widget.ViewPager2
 import com.example.snackaudiobook.R
 import com.example.snackaudiobook.databinding.ActivityMainBinding
@@ -14,6 +15,10 @@ class MainActivity : AppCompatActivity() {
     private lateinit var adapter: FragmentPageAdapter
     private lateinit var viewPager2: ViewPager2
 
+    override fun onRestart() {
+        super.onRestart()
+        StoreFragment().refreshAdapter()
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -52,6 +57,9 @@ class MainActivity : AppCompatActivity() {
                     }
                     R.id.menu_main_store -> { // 다른 프래그먼트 화면으로 이동하는 기능
                         viewPager2.currentItem = 2
+//                        val storeFragment = adapter.getFragment(2) as StoreFragment
+//                        storeFragment.refreshAdapter()
+
                         /*val BlankFragment1 = InfoFragment()
                         supportFragmentManager.beginTransaction()
                             .replace(R.id.fl_con, BlankFragment1).commit()*/
