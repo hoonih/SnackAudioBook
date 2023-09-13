@@ -1,16 +1,20 @@
 package com.example.snackaudiobook.navigation
 
+import android.annotation.SuppressLint
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.snackaudiobook.R
-import com.example.snackaudiobook.databinding.FragmentHomeBinding
 import com.example.snackaudiobook.databinding.FragmentStoreBinding
+import com.google.firebase.firestore.FirebaseFirestore
 
 
 class StoreFragment : Fragment() {
@@ -36,24 +40,72 @@ class StoreFragment : Fragment() {
         // Initialize arrayList
         arrayList = ArrayList()
 
-        // Add books to arrayList
-        val putbook = Bookstring(0)
-        arrayList?.add(putbook)
-        val putbook2 = Bookstring(1)
-        arrayList?.add(putbook2)
-        val putbook3 = Bookstring(2)
-        arrayList?.add(putbook3)
-        val putbook4 = Bookstring(3)
-        arrayList?.add(putbook4)
-        val putbook5 = Bookstring(4)
-        arrayList?.add(putbook5)
-        val putbook6 = Bookstring(5)
-        arrayList?.add(putbook6)
 
-        listAdapterGrid = ListAdapterGrid(requireActivity(), arrayList!!)
-        recyclerView?.adapter = listAdapterGrid
+        val db = FirebaseFirestore.getInstance()
+        val collectionRef = db.collection("store")
+        val testDocRef = collectionRef.document("test")
+
+        var bookstore= mutableListOf<Int>()
+
+        testDocRef.get()
+            .addOnSuccessListener { documetSnapShot ->
+                if (documetSnapShot.exists()) {
+                    val data = documetSnapShot.data
+
+                    if (data != null) {
+                        for ((fieldName, fieldValue) in data) {
+                            if (fieldValue is Boolean && fieldValue == true) {
+                                // 필드 값이 true이면 필드 이름을 리스트에 추가합니다.
+                                bookstore.add(fieldName.toInt())
+
+                                var putbook = Bookstring(fieldName.toInt())
+                                arrayList?.add(putbook)
+                            }
+                        }
+
+
+                        listAdapterGrid = ListAdapterGrid(requireActivity(), arrayList!!)
+                        recyclerView?.adapter = listAdapterGrid
+                    }
+                }
+            }
+
+
 
         return binding.root
+    }
+    @SuppressLint("NotifyDataSetChanged")
+    fun refreshAdapter() {
+
+        arrayList = ArrayList()
+
+        val db = FirebaseFirestore.getInstance()
+        val collectionRef = db.collection("store")
+        val testDocRef = collectionRef.document("test")
+
+        var bookstore= mutableListOf<Int>()
+
+        testDocRef.get()
+            .addOnSuccessListener { documetSnapShot ->
+                if (documetSnapShot.exists()) {
+                    val data = documetSnapShot.data
+
+                    if (data != null) {
+                        for ((fieldName, fieldValue) in data) {
+                            if (fieldValue is Boolean && fieldValue == true) {
+                                // 필드 값이 true이면 필드 이름을 리스트에 추가합니다.
+
+                                var putbook = Bookstring(fieldName.toInt())
+                                arrayList?.add(putbook)
+                            }
+                        }
+
+                        listAdapterGrid?.updateData(arrayList!!)
+                        listAdapterGrid?.notifyDataSetChanged()
+                    }
+                }
+            }
+
     }
     fun Bookstring(itemIndex: Int): Book{
         if (itemIndex == 0)
@@ -98,5 +150,8 @@ class StoreFragment : Fragment() {
         }
         return Book("ERROR", "ERROR", "ERROR", "ERROR")
     }
+
+
+
 
 }
