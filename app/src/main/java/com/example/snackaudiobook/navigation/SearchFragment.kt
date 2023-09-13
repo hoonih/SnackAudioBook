@@ -25,7 +25,6 @@ class SearchFragment : Fragment() {
             val intent = Intent(activity, ViewpageActivity::class.java)
 
             val putbook = Bookstring(4)
-
             intent.putExtra("book", putbook)
             intent.putExtra("index", 4)
             startActivity(intent)

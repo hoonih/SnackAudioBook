@@ -74,8 +74,9 @@ class StoreFragment : Fragment() {
 
         return binding.root
     }
-    @SuppressLint("NotifyDataSetChanged")
-    fun refreshAdapter() {
+
+    override fun onResume() {
+        super.onResume()
 
         arrayList = ArrayList()
 
@@ -105,7 +106,6 @@ class StoreFragment : Fragment() {
                     }
                 }
             }
-
     }
     fun Bookstring(itemIndex: Int): Book{
         if (itemIndex == 0)

@@ -15,10 +15,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var adapter: FragmentPageAdapter
     private lateinit var viewPager2: ViewPager2
 
-    override fun onRestart() {
-        super.onRestart()
-        StoreFragment().refreshAdapter()
-    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
