@@ -86,7 +86,7 @@
                     app:layout_constraintBottom_toBottomOf="@id/text_recaudio"
                     android:layout_marginStart="4dp"/>
 
-                \<GridLayout
+                <GridLayout
                     android:id="@+id/grid1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

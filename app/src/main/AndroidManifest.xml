@@ -13,8 +13,10 @@
         android:theme="@style/Theme.Snackaudiobook"
         tools:targetApi="31">
         <activity
-            android:name=".PlayActivity"
-            android:exported="false" />
+            android:name=".navigation.PlayActivity"
+            android:exported="true">
+
+        </activity>
         <activity
             android:name=".navigation.ViewpageActivity"
             android:exported="false" />
@@ -24,6 +26,7 @@
         <activity
             android:name=".navigation.MainActivity"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

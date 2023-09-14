@@ -8,6 +8,7 @@ import android.widget.Toast
 import com.example.snackaudiobook.R
 import com.example.snackaudiobook.databinding.ActivityViewpageBinding
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firestore.admin.v1.Index
 
 class ViewpageActivity : AppCompatActivity() {
 
@@ -87,8 +88,10 @@ class ViewpageActivity : AppCompatActivity() {
 
         }
 
-
-
-
+        binding.btnPlay.setOnClickListener {
+            val intent = Intent(this, PlayActivity::class.java)
+            intent.putExtra("index", index)
+            startActivity(intent)
+        }
     }
 }
